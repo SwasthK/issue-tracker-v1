@@ -62,7 +62,13 @@ bunx prisma generate
 bunx prisma migrate dev
 ```
 
-5. Start the app:
+5. Reset the database and load demo users, members, and issues:
+
+```bash
+bun run db:reset
+```
+
+6. Start the app:
 
 ```bash
 bun run dev
@@ -82,10 +88,19 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## How to use it
 
-1. Register as the first admin and create an organization.
-2. Open **Members** and add teammates with a temporary password.
-3. Members sign in at `/login`.
-4. Create and manage issues from **Issues**. Dashboard shows counts and charts.
+Demo accounts (password for all: `Password123!`):
+
+| Email | Role |
+| --- | --- |
+| `julia.r@example.org` | Owner |
+| `marco.r@example.org` | Admin |
+| `emma.t@example.net` | Member |
+| `james.b@example.com` | Member |
+| `oscar.d@example.net` | Member |
+
+1. Sign in as Ava (`julia.r@example.org`) or register a new org.
+2. Open **Members** to add more teammates (admins/owners only).
+3. Create and manage issues from **Issues**. Dashboard shows counts and charts.
 
 ## API
 
